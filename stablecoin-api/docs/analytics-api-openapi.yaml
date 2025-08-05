@@ -1,0 +1,1048 @@
+openapi: 3.0.3
+info:
+  title: Nexora Analytics API
+  description: |
+    Comprehensive banking analytics and performance metrics for USDC transfer operations.
+    This API enables real-time monitoring of transfer volumes, cost savings, network performance, 
+    and compliance metrics across multiple blockchain networks.
+  version: 1.0.0
+  contact:
+    name: Nexora API Support
+    email: api-support@nexora.com
+    url: https://docs.nexora.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: https://api.nexora.com/v1
+    description: Production server
+  - url: https://staging-api.nexora.com/v1
+    description: Staging server
+  - url: http://localhost:3000/api
+    description: Development server
+
+security:
+  - BearerAuth: []
+
+paths:
+  /analytics/dashboard/{bankId}:
+    get:
+      summary: Get Dashboard Analytics
+      description: Retrieve comprehensive dashboard data including KPIs, trends, and performance metrics
+      operationId: getDashboardAnalytics
+      tags:
+        - Analytics
+      parameters:
+        - name: bankId
+          in: path
+          required: true
+          description: Bank UUID identifier
+          schema:
+            type: string
+            format: uuid
+            example: "550e8400-e29b-41d4-a716-446655440000"
+        - name: period
+          in: query
+          required: false
+          description: Time period for analytics
+          schema:
+            type: string
+            enum: [7d, 30d, 90d, 1y]
+            default: 30d
+        - name: format
+          in: query
+          required: false
+          description: Response format
+          schema:
+            type: string
+            enum: [json, pdf]
+            default: json
+      responses:
+        '200':
+          description: Dashboard data retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DashboardResponse'
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+              description: PDF report
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimitExceeded'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /analytics/kpis/{bankId}:
+    get:
+      summary: Get Key Performance Indicators
+      description: Retrieve specific KPI metrics for a bank
+      operationId: getKPIs
+      tags:
+        - Analytics
+      parameters:
+        - name: bankId
+          in: path
+          required: true
+          description: Bank UUID identifier
+          schema:
+            type: string
+            format: uuid
+            example: "550e8400-e29b-41d4-a716-446655440000"
+        - name: period
+          in: query
+          required: false
+          description: Time period for analytics
+          schema:
+            type: string
+            enum: [7d, 30d, 90d, 1y]
+            default: 30d
+      responses:
+        '200':
+          description: KPIs retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KPIsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimitExceeded'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /analytics/trends/{bankId}:
+    get:
+      summary: Get Volume Trends
+      description: Retrieve daily volume and transfer trends for charting
+      operationId: getVolumeTrends
+      tags:
+        - Analytics
+      parameters:
+        - name: bankId
+          in: path
+          required: true
+          description: Bank UUID identifier
+          schema:
+            type: string
+            format: uuid
+            example: "550e8400-e29b-41d4-a716-446655440000"
+        - name: period
+          in: query
+          required: false
+          description: Time period for analytics
+          schema:
+            type: string
+            enum: [7d, 30d, 90d, 1y]
+            default: 30d
+      responses:
+        '200':
+          description: Volume trends retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TrendsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimitExceeded'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /analytics/transfer-types/{bankId}:
+    get:
+      summary: Get Transfer Type Distribution
+      description: Retrieve breakdown of transfers by type (interbank, international, etc.)
+      operationId: getTransferTypes
+      tags:
+        - Analytics
+      parameters:
+        - name: bankId
+          in: path
+          required: true
+          description: Bank UUID identifier
+          schema:
+            type: string
+            format: uuid
+            example: "550e8400-e29b-41d4-a716-446655440000"
+        - name: period
+          in: query
+          required: false
+          description: Time period for analytics
+          schema:
+            type: string
+            enum: [7d, 30d, 90d, 1y]
+            default: 30d
+      responses:
+        '200':
+          description: Transfer types retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransferTypesResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimitExceeded'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /analytics/network-performance/{bankId}:
+    get:
+      summary: Get Network Performance
+      description: Retrieve performance metrics by blockchain network
+      operationId: getNetworkPerformance
+      tags:
+        - Analytics
+      parameters:
+        - name: bankId
+          in: path
+          required: true
+          description: Bank UUID identifier
+          schema:
+            type: string
+            format: uuid
+            example: "550e8400-e29b-41d4-a716-446655440000"
+        - name: period
+          in: query
+          required: false
+          description: Time period for analytics
+          schema:
+            type: string
+            enum: [7d, 30d, 90d, 1y]
+            default: 30d
+      responses:
+        '200':
+          description: Network performance retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NetworkPerformanceResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimitExceeded'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /analytics/cost-savings/{bankId}:
+    get:
+      summary: Get Cost Savings Analysis
+      description: Retrieve detailed cost comparison between Nexora and SWIFT
+      operationId: getCostSavings
+      tags:
+        - Analytics
+      parameters:
+        - name: bankId
+          in: path
+          required: true
+          description: Bank UUID identifier
+          schema:
+            type: string
+            format: uuid
+            example: "550e8400-e29b-41d4-a716-446655440000"
+        - name: period
+          in: query
+          required: false
+          description: Time period for analytics
+          schema:
+            type: string
+            enum: [7d, 30d, 90d, 1y]
+            default: 30d
+      responses:
+        '200':
+          description: Cost savings analysis retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CostSavingsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimitExceeded'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /analytics/capture-transfer:
+    post:
+      summary: Capture Transfer Analytics
+      description: Automatically capture analytics when a transfer is created
+      operationId: captureTransferAnalytics
+      tags:
+        - Analytics
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransferCaptureRequest'
+            example:
+              transaction_id: "transfer_12345"
+              bank_id: "550e8400-e29b-41d4-a716-446655440000"
+              amount: 50000
+              network_used: "polygon"
+              settlement_time_seconds: 25
+              transfer_type: "interbank"
+              status: "completed"
+      responses:
+        '201':
+          description: Transfer analytics captured successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransferCaptureResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/RateLimitExceeded'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /analytics/health:
+    get:
+      summary: Health Check
+      description: Check API health and status
+      operationId: getHealth
+      tags:
+        - System
+      responses:
+        '200':
+          description: API is healthy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+        '503':
+          description: API is unhealthy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT token for API authentication
+
+  schemas:
+    # Base Response Schema
+    BaseResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the request was successful
+        generated_at:
+          type: string
+          format: date-time
+          description: Timestamp when the response was generated
+      required:
+        - success
+        - generated_at
+
+    # Dashboard Response
+    DashboardResponse:
+      allOf:
+        - $ref: '#/components/schemas/BaseResponse'
+        - type: object
+          properties:
+            data:
+              type: object
+              properties:
+                period:
+                  type: string
+                  enum: [7d, 30d, 90d, 1y]
+                  description: Time period for the analytics
+                kpis:
+                  $ref: '#/components/schemas/KPIs'
+                volume_trends:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/VolumeTrend'
+                transfer_distribution:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/TransferType'
+                network_performance:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/NetworkPerformance'
+              required:
+                - period
+                - kpis
+                - volume_trends
+                - transfer_distribution
+                - network_performance
+
+    # KPIs Response
+    KPIsResponse:
+      allOf:
+        - $ref: '#/components/schemas/BaseResponse'
+        - type: object
+          properties:
+            data:
+              type: object
+              properties:
+                period:
+                  type: string
+                  enum: [7d, 30d, 90d, 1y]
+                kpis:
+                  $ref: '#/components/schemas/KPIs'
+              required:
+                - period
+                - kpis
+
+    # Trends Response
+    TrendsResponse:
+      allOf:
+        - $ref: '#/components/schemas/BaseResponse'
+        - type: object
+          properties:
+            data:
+              type: array
+              items:
+                $ref: '#/components/schemas/VolumeTrend'
+            period:
+              type: string
+              enum: [7d, 30d, 90d, 1y]
+          required:
+            - data
+            - period
+
+    # Transfer Types Response
+    TransferTypesResponse:
+      allOf:
+        - $ref: '#/components/schemas/BaseResponse'
+        - type: object
+          properties:
+            data:
+              type: array
+              items:
+                $ref: '#/components/schemas/TransferType'
+            period:
+              type: string
+              enum: [7d, 30d, 90d, 1y]
+          required:
+            - data
+            - period
+
+    # Network Performance Response
+    NetworkPerformanceResponse:
+      allOf:
+        - $ref: '#/components/schemas/BaseResponse'
+        - type: object
+          properties:
+            data:
+              type: array
+              items:
+                $ref: '#/components/schemas/NetworkPerformance'
+            period:
+              type: string
+              enum: [7d, 30d, 90d, 1y]
+          required:
+            - data
+            - period
+
+    # Cost Savings Response
+    CostSavingsResponse:
+      allOf:
+        - $ref: '#/components/schemas/BaseResponse'
+        - type: object
+          properties:
+            data:
+              type: object
+              properties:
+                period:
+                  type: string
+                  enum: [7d, 30d, 90d, 1y]
+                nexora_costs:
+                  $ref: '#/components/schemas/NexoraCosts'
+                swift_costs:
+                  $ref: '#/components/schemas/SwiftCosts'
+                savings:
+                  $ref: '#/components/schemas/Savings'
+              required:
+                - period
+                - nexora_costs
+                - swift_costs
+                - savings
+
+    # Transfer Capture Request
+    TransferCaptureRequest:
+      type: object
+      properties:
+        transaction_id:
+          type: string
+          description: Unique transaction identifier
+          example: "transfer_12345"
+        bank_id:
+          type: string
+          format: uuid
+          description: Bank UUID identifier
+          example: "550e8400-e29b-41d4-a716-446655440000"
+        amount:
+          type: number
+          minimum: 0
+          description: Transfer amount in USD
+          example: 50000
+        network_used:
+          type: string
+          enum: [polygon, ethereum, arbitrum, base]
+          description: Blockchain network used
+          example: "polygon"
+        settlement_time_seconds:
+          type: integer
+          minimum: 0
+          description: Time taken to settle the transfer in seconds
+          example: 25
+        transfer_type:
+          type: string
+          enum: [interbank, international, domestic]
+          description: Type of transfer
+          example: "interbank"
+        status:
+          type: string
+          enum: [pending, completed, failed, cancelled]
+          description: Transfer status
+          example: "completed"
+      required:
+        - transaction_id
+        - bank_id
+        - amount
+        - network_used
+        - settlement_time_seconds
+        - transfer_type
+        - status
+
+    # Transfer Capture Response
+    TransferCaptureResponse:
+      allOf:
+        - $ref: '#/components/schemas/BaseResponse'
+        - type: object
+          properties:
+            data:
+              type: object
+              properties:
+                analytics_captured:
+                  type: object
+                  properties:
+                    transaction_id:
+                      type: string
+                    swift_equivalent_fee:
+                      type: number
+                    nexora_fee:
+                      type: number
+                    fee_savings:
+                      type: number
+                    settlement_time_savings:
+                      type: integer
+                  required:
+                    - transaction_id
+                    - swift_equivalent_fee
+                    - nexora_fee
+                    - fee_savings
+                    - settlement_time_savings
+              required:
+                - analytics_captured
+
+    # Health Response
+    HealthResponse:
+      allOf:
+        - $ref: '#/components/schemas/BaseResponse'
+        - type: object
+          properties:
+            data:
+              type: object
+              properties:
+                status:
+                  type: string
+                  enum: [healthy, unhealthy]
+                version:
+                  type: string
+                timestamp:
+                  type: string
+                  format: date-time
+                uptime:
+                  type: integer
+                  description: Uptime in seconds
+                database:
+                  type: string
+                  enum: [connected, disconnected]
+                cache:
+                  type: string
+                  enum: [operational, degraded, down]
+              required:
+                - status
+                - version
+                - timestamp
+                - uptime
+                - database
+                - cache
+
+    # KPIs Schema
+    KPIs:
+      type: object
+      properties:
+        total_transfers:
+          type: integer
+          minimum: 0
+          description: Total number of transfers
+          example: 150
+        total_volume:
+          type: number
+          minimum: 0
+          description: Total transfer volume in USD
+          example: 2500000.00
+        total_fees:
+          type: number
+          minimum: 0
+          description: Total fees charged
+          example: 2500.00
+        avg_settlement_time:
+          type: number
+          minimum: 0
+          description: Average settlement time in seconds
+          example: 30.5
+        success_rate:
+          type: number
+          minimum: 0
+          maximum: 100
+          description: Success rate percentage
+          example: 98.5
+        cost_savings:
+          type: number
+          minimum: 0
+          description: Total cost savings vs SWIFT
+          example: 10000.00
+        estimated_swift_fees:
+          type: number
+          minimum: 0
+          description: Estimated fees if using SWIFT
+          example: 12500.00
+        savings_percentage:
+          type: string
+          description: Percentage savings as string
+          example: "80.00"
+      required:
+        - total_transfers
+        - total_volume
+        - total_fees
+        - avg_settlement_time
+        - success_rate
+        - cost_savings
+        - estimated_swift_fees
+        - savings_percentage
+
+    # Volume Trend Schema
+    VolumeTrend:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date
+          description: Date in YYYY-MM-DD format
+          example: "2024-01-01"
+        transfers:
+          type: integer
+          minimum: 0
+          description: Number of transfers on this date
+          example: 25
+        volume:
+          type: number
+          minimum: 0
+          description: Transfer volume on this date
+          example: 500000.00
+        fees:
+          type: number
+          minimum: 0
+          description: Fees charged on this date
+          example: 500.00
+        avg_settlement_time:
+          type: number
+          minimum: 0
+          description: Average settlement time on this date
+          example: 30.2
+        success_rate:
+          type: number
+          minimum: 0
+          maximum: 100
+          description: Success rate on this date
+          example: 98.5
+      required:
+        - date
+        - transfers
+        - volume
+        - fees
+        - avg_settlement_time
+        - success_rate
+
+    # Transfer Type Schema
+    TransferType:
+      type: object
+      properties:
+        transfer_type:
+          type: string
+          enum: [interbank, international, domestic]
+          description: Type of transfer
+          example: "interbank"
+        count:
+          type: integer
+          minimum: 0
+          description: Number of transfers of this type
+          example: 100
+        total_volume:
+          type: number
+          minimum: 0
+          description: Total volume for this transfer type
+          example: 1500000.00
+        total_fees:
+          type: number
+          minimum: 0
+          description: Total fees for this transfer type
+          example: 1500.00
+        avg_settlement_time:
+          type: number
+          minimum: 0
+          description: Average settlement time for this transfer type
+          example: 30.5
+        percentage:
+          type: string
+          description: Percentage of total transfers
+          example: "66.67"
+      required:
+        - transfer_type
+        - count
+        - total_volume
+        - total_fees
+        - avg_settlement_time
+        - percentage
+
+    # Network Performance Schema
+    NetworkPerformance:
+      type: object
+      properties:
+        network:
+          type: string
+          enum: [polygon, ethereum, arbitrum, base]
+          description: Blockchain network
+          example: "polygon"
+        total_transfers:
+          type: integer
+          minimum: 0
+          description: Total transfers on this network
+          example: 80
+        total_volume:
+          type: number
+          minimum: 0
+          description: Total volume on this network
+          example: 1200000.00
+        total_fees:
+          type: number
+          minimum: 0
+          description: Total fees on this network
+          example: 1200.00
+        avg_settlement_time:
+          type: number
+          minimum: 0
+          description: Average settlement time on this network
+          example: 25.5
+        success_rate:
+          type: number
+          minimum: 0
+          maximum: 100
+          description: Success rate on this network
+          example: 99.2
+        cost_savings:
+          type: number
+          minimum: 0
+          description: Cost savings on this network vs SWIFT
+          example: 8000.00
+      required:
+        - network
+        - total_transfers
+        - total_volume
+        - total_fees
+        - avg_settlement_time
+        - success_rate
+        - cost_savings
+
+    # Nexora Costs Schema
+    NexoraCosts:
+      type: object
+      properties:
+        total_fees:
+          type: number
+          minimum: 0
+          description: Total Nexora fees
+          example: 2500.00
+        avg_fee_per_transfer:
+          type: number
+          minimum: 0
+          description: Average fee per transfer
+          example: 16.67
+        fee_breakdown:
+          type: object
+          properties:
+            network_fees:
+              type: number
+              minimum: 0
+              description: Network transaction fees
+              example: 1500.00
+            platform_fees:
+              type: number
+              minimum: 0
+              description: Platform service fees
+              example: 1000.00
+          required:
+            - network_fees
+            - platform_fees
+      required:
+        - total_fees
+        - avg_fee_per_transfer
+        - fee_breakdown
+
+    # SWIFT Costs Schema
+    SwiftCosts:
+      type: object
+      properties:
+        total_fees:
+          type: number
+          minimum: 0
+          description: Total SWIFT fees
+          example: 12500.00
+        avg_fee_per_transfer:
+          type: number
+          minimum: 0
+          description: Average fee per transfer
+          example: 83.33
+        fee_breakdown:
+          type: object
+          properties:
+            wire_fees:
+              type: number
+              minimum: 0
+              description: Wire transfer fees
+              example: 3750.00
+            correspondent_fees:
+              type: number
+              minimum: 0
+              description: Correspondent bank fees
+              example: 2250.00
+            fx_margin:
+              type: number
+              minimum: 0
+              description: Foreign exchange margin
+              example: 6500.00
+          required:
+            - wire_fees
+            - correspondent_fees
+            - fx_margin
+      required:
+        - total_fees
+        - avg_fee_per_transfer
+        - fee_breakdown
+
+    # Savings Schema
+    Savings:
+      type: object
+      properties:
+        total_savings:
+          type: number
+          minimum: 0
+          description: Total cost savings
+          example: 10000.00
+        savings_percentage:
+          type: number
+          minimum: 0
+          maximum: 100
+          description: Percentage savings
+          example: 80.00
+        savings_per_transfer:
+          type: number
+          minimum: 0
+          description: Average savings per transfer
+          example: 66.67
+      required:
+        - total_savings
+        - savings_percentage
+        - savings_per_transfer
+
+    # Error Response Schema
+    ErrorResponse:
+      allOf:
+        - $ref: '#/components/schemas/BaseResponse'
+        - type: object
+          properties:
+            error:
+              type: string
+              description: Error type
+            message:
+              type: string
+              description: Human-readable error message
+            details:
+              type: object
+              description: Additional error details
+          required:
+            - error
+            - message
+
+  responses:
+    BadRequest:
+      description: Bad request - invalid parameters
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/ErrorResponse'
+              - type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Bad Request"
+                  message:
+                    type: string
+                    example: "Invalid parameters provided"
+
+    Unauthorized:
+      description: Unauthorized - invalid or missing authentication
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/ErrorResponse'
+              - type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Unauthorized"
+                  message:
+                    type: string
+                    example: "Invalid or missing API token"
+
+    NotFound:
+      description: Not found - resource not found
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/ErrorResponse'
+              - type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Not Found"
+                  message:
+                    type: string
+                    example: "Bank not found"
+
+    ValidationError:
+      description: Validation error - invalid request data
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/ErrorResponse'
+              - type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Validation Error"
+                  message:
+                    type: string
+                    example: "Invalid transfer data"
+                  details:
+                    type: object
+                    description: Field-specific validation errors
+
+    RateLimitExceeded:
+      description: Rate limit exceeded
+      headers:
+        X-RateLimit-Limit:
+          description: Rate limit per hour
+          schema:
+            type: integer
+            example: 1000
+        X-RateLimit-Remaining:
+          description: Remaining requests in current hour
+          schema:
+            type: integer
+            example: 0
+        X-RateLimit-Reset:
+          description: Time when rate limit resets (Unix timestamp)
+          schema:
+            type: integer
+            example: 1640995200
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/ErrorResponse'
+              - type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Rate Limit Exceeded"
+                  message:
+                    type: string
+                    example: "Too many requests. Please try again later."
+
+    InternalServerError:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/ErrorResponse'
+              - type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Internal Server Error"
+                  message:
+                    type: string
+                    example: "An unexpected error occurred"
+
+tags:
+  - name: Analytics
+    description: Analytics and reporting endpoints
+  - name: System
+    description: System health and status endpoints
+
+externalDocs:
+  description: Find more info about Nexora Analytics API
+  url: https://docs.nexora.com 
