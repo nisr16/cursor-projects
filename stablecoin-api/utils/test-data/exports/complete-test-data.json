@@ -1,0 +1,410 @@
+{
+  "generated_at": "2025-08-04T21:14:31.720Z",
+  "summary": {
+    "banks": 2,
+    "users": 20,
+    "wallets": 8,
+    "transactions": 0,
+    "roles": 8,
+    "approvalRules": 8
+  },
+  "banks": [
+    {
+      "id": 41,
+      "bank_name": "Caribbean Trade Bank",
+      "bank_code": "TB1754342071700",
+      "country": "SV",
+      "contact_email": "admin@caribbeantradebank.com",
+      "tier": "tier2",
+      "status": "active",
+      "created_at": "2025-08-04T21:14:31.699Z"
+    },
+    {
+      "id": 42,
+      "bank_name": "Andean Commercial Bank",
+      "bank_code": "TB1754342071701",
+      "country": "HN",
+      "contact_email": "admin@andeancommercialbank.com",
+      "tier": "tier1",
+      "status": "active",
+      "created_at": "2025-08-04T21:14:31.699Z"
+    }
+  ],
+  "users": [
+    {
+      "id": 70,
+      "user_id": "user_lofna9cgm3",
+      "bank_id": 41,
+      "email": "yolanda.williams@caribbeantradebank.com",
+      "first_name": "Yolanda",
+      "last_name": "Williams",
+      "role": "operator",
+      "department": "treasury"
+    },
+    {
+      "id": 71,
+      "user_id": "user_2t2vh1kwmnf",
+      "bank_id": 41,
+      "email": "ana.meléndez@caribbeantradebank.com",
+      "first_name": "Ana",
+      "last_name": "Meléndez",
+      "role": "viewer",
+      "department": "operations"
+    },
+    {
+      "id": 72,
+      "user_id": "user_6fehrxyrm5n",
+      "bank_id": 41,
+      "email": "ana.brown@caribbeantradebank.com",
+      "first_name": "Ana",
+      "last_name": "Brown",
+      "role": "viewer",
+      "department": "operations"
+    },
+    {
+      "id": 73,
+      "user_id": "user_7uortjp449d",
+      "bank_id": 41,
+      "email": "rafael.lópez@caribbeantradebank.com",
+      "first_name": "Rafael",
+      "last_name": "López",
+      "role": "operator",
+      "department": "operations"
+    },
+    {
+      "id": 74,
+      "user_id": "user_l3jbcg6j388",
+      "bank_id": 41,
+      "email": "sofia.hernández@caribbeantradebank.com",
+      "first_name": "Sofia",
+      "last_name": "Hernández",
+      "role": "manager",
+      "department": "treasury"
+    },
+    {
+      "id": 75,
+      "user_id": "user_st989t3ib5",
+      "bank_id": 41,
+      "email": "pedro.garcía@caribbeantradebank.com",
+      "first_name": "Pedro",
+      "last_name": "García",
+      "role": "viewer",
+      "department": "finance"
+    },
+    {
+      "id": 76,
+      "user_id": "user_o4o3y4ete8",
+      "bank_id": 41,
+      "email": "mercedes.pérez@caribbeantradebank.com",
+      "first_name": "Mercedes",
+      "last_name": "Pérez",
+      "role": "viewer",
+      "department": "audit"
+    },
+    {
+      "id": 77,
+      "user_id": "user_t1nh6x526e",
+      "bank_id": 41,
+      "email": "michael.pérez@caribbeantradebank.com",
+      "first_name": "Michael",
+      "last_name": "Pérez",
+      "role": "operator",
+      "department": "finance"
+    },
+    {
+      "id": 78,
+      "user_id": "user_59a9xmtn08x",
+      "bank_id": 42,
+      "email": "claudia.morales@andeancommercialbank.com",
+      "first_name": "Claudia",
+      "last_name": "Morales",
+      "role": "viewer",
+      "department": "risk"
+    },
+    {
+      "id": 79,
+      "user_id": "user_q4k9b7mn2ak",
+      "bank_id": 42,
+      "email": "francisca.rosario@andeancommercialbank.com",
+      "first_name": "Francisca",
+      "last_name": "Rosario",
+      "role": "manager",
+      "department": "operations"
+    },
+    {
+      "id": 80,
+      "user_id": "user_zyxab07s37h",
+      "bank_id": 42,
+      "email": "angela.quintanilla@andeancommercialbank.com",
+      "first_name": "Angela",
+      "last_name": "Quintanilla",
+      "role": "viewer",
+      "department": "finance"
+    },
+    {
+      "id": 81,
+      "user_id": "user_m1u9jtd2v8j",
+      "bank_id": 42,
+      "email": "raúl.taylor@andeancommercialbank.com",
+      "first_name": "Raúl",
+      "last_name": "Taylor",
+      "role": "operator",
+      "department": "operations"
+    },
+    {
+      "id": 82,
+      "user_id": "user_fwvwm9dmens",
+      "bank_id": 42,
+      "email": "maría.guerrero@andeancommercialbank.com",
+      "first_name": "María",
+      "last_name": "Guerrero",
+      "role": "viewer",
+      "department": "risk"
+    },
+    {
+      "id": 83,
+      "user_id": "user_3xx4u65ye93",
+      "bank_id": 42,
+      "email": "edwin.paulino@andeancommercialbank.com",
+      "first_name": "Edwin",
+      "last_name": "Paulino",
+      "role": "manager",
+      "department": "treasury"
+    },
+    {
+      "id": 84,
+      "user_id": "user_67527zklk8l",
+      "bank_id": 42,
+      "email": "félix.ramírez@andeancommercialbank.com",
+      "first_name": "Félix",
+      "last_name": "Ramírez",
+      "role": "operator",
+      "department": "risk"
+    },
+    {
+      "id": 85,
+      "user_id": "user_t8u4k7nq54",
+      "bank_id": 42,
+      "email": "angela.báez@andeancommercialbank.com",
+      "first_name": "Angela",
+      "last_name": "Báez",
+      "role": "operator",
+      "department": "treasury"
+    },
+    {
+      "id": 86,
+      "user_id": "user_fpgs2fh2mvm",
+      "bank_id": 42,
+      "email": "anthony.núñez@andeancommercialbank.com",
+      "first_name": "Anthony",
+      "last_name": "Núñez",
+      "role": "operator",
+      "department": "operations"
+    },
+    {
+      "id": 87,
+      "user_id": "user_f5q92eppam8",
+      "bank_id": 42,
+      "email": "antonio.ortega@andeancommercialbank.com",
+      "first_name": "Antonio",
+      "last_name": "Ortega",
+      "role": "manager",
+      "department": "risk"
+    },
+    {
+      "id": 88,
+      "user_id": "user_gtznomg4uzt",
+      "bank_id": 42,
+      "email": "sarah.moore@andeancommercialbank.com",
+      "first_name": "Sarah",
+      "last_name": "Moore",
+      "role": "manager",
+      "department": "treasury"
+    },
+    {
+      "id": 89,
+      "user_id": "user_sdp50g1bcnr",
+      "bank_id": 42,
+      "email": "mercedes.williams@andeancommercialbank.com",
+      "first_name": "Mercedes",
+      "last_name": "Williams",
+      "role": "manager",
+      "department": "treasury"
+    }
+  ],
+  "wallets": [
+    {
+      "id": 10,
+      "bank_id": 41,
+      "currency": "USD",
+      "wallet_type": "main_treasury",
+      "balance": 653275
+    },
+    {
+      "id": 11,
+      "bank_id": 41,
+      "currency": "USD",
+      "wallet_type": "fx_reserve",
+      "balance": 10698641
+    },
+    {
+      "id": 12,
+      "bank_id": 41,
+      "currency": "USD",
+      "wallet_type": "settlement",
+      "balance": 4145845
+    },
+    {
+      "id": 13,
+      "bank_id": 41,
+      "currency": "USD",
+      "wallet_type": "emergency",
+      "balance": 138038
+    },
+    {
+      "id": 14,
+      "bank_id": 42,
+      "currency": "USD",
+      "wallet_type": "main_treasury",
+      "balance": 834208
+    },
+    {
+      "id": 15,
+      "bank_id": 42,
+      "currency": "USD",
+      "wallet_type": "fx_reserve",
+      "balance": 11832690
+    },
+    {
+      "id": 16,
+      "bank_id": 42,
+      "currency": "USD",
+      "wallet_type": "settlement",
+      "balance": 5568342
+    },
+    {
+      "id": 17,
+      "bank_id": 42,
+      "currency": "USD",
+      "wallet_type": "emergency",
+      "balance": 577033
+    }
+  ],
+  "transactions": [],
+  "roles": [
+    {
+      "id": 118,
+      "bank_id": 41,
+      "permissions": "read_only"
+    },
+    {
+      "id": 119,
+      "bank_id": 41,
+      "permissions": "transfers,reports"
+    },
+    {
+      "id": 120,
+      "bank_id": 41,
+      "permissions": "transfers,approvals,reports"
+    },
+    {
+      "id": 121,
+      "bank_id": 41,
+      "permissions": "all"
+    },
+    {
+      "id": 122,
+      "bank_id": 42,
+      "permissions": "read_only"
+    },
+    {
+      "id": 123,
+      "bank_id": 42,
+      "permissions": "transfers,reports"
+    },
+    {
+      "id": 124,
+      "bank_id": 42,
+      "permissions": "transfers,approvals,reports"
+    },
+    {
+      "id": 125,
+      "bank_id": 42,
+      "permissions": "all"
+    }
+  ],
+  "approvalRules": [
+    {
+      "id": 116,
+      "bank_id": 41,
+      "min_amount": 0,
+      "max_amount": 9999,
+      "required_role_level": 1,
+      "required_approvals": 0,
+      "auto_approve": true
+    },
+    {
+      "id": 117,
+      "bank_id": 41,
+      "min_amount": 10000,
+      "max_amount": 49999,
+      "required_role_level": 5,
+      "required_approvals": 1,
+      "auto_approve": false
+    },
+    {
+      "id": 118,
+      "bank_id": 41,
+      "min_amount": 50000,
+      "max_amount": 249999,
+      "required_role_level": 7,
+      "required_approvals": 1,
+      "auto_approve": false
+    },
+    {
+      "id": 119,
+      "bank_id": 41,
+      "min_amount": 250000,
+      "max_amount": null,
+      "required_role_level": 10,
+      "required_approvals": 2,
+      "auto_approve": false
+    },
+    {
+      "id": 120,
+      "bank_id": 42,
+      "min_amount": 0,
+      "max_amount": 9999,
+      "required_role_level": 1,
+      "required_approvals": 0,
+      "auto_approve": true
+    },
+    {
+      "id": 121,
+      "bank_id": 42,
+      "min_amount": 10000,
+      "max_amount": 49999,
+      "required_role_level": 5,
+      "required_approvals": 1,
+      "auto_approve": false
+    },
+    {
+      "id": 122,
+      "bank_id": 42,
+      "min_amount": 50000,
+      "max_amount": 249999,
+      "required_role_level": 7,
+      "required_approvals": 1,
+      "auto_approve": false
+    },
+    {
+      "id": 123,
+      "bank_id": 42,
+      "min_amount": 250000,
+      "max_amount": null,
+      "required_role_level": 10,
+      "required_approvals": 2,
+      "auto_approve": false
+    }
+  ]
+}

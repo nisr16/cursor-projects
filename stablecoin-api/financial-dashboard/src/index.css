@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-fintech-darker text-white;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-fintech-dark rounded-lg border border-gray-800 p-6;
+  }
+  
+  .metric-card {
+    @apply bg-fintech-dark rounded-lg border border-gray-800 p-4 hover:border-gray-700 transition-colors;
+  }
+  
+  .growth-positive {
+    @apply text-fintech-green;
+  }
+  
+  .growth-negative {
+    @apply text-fintech-red;
+  }
+}

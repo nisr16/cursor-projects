@@ -1,0 +1,469 @@
+{
+  "generated_at": "2025-08-04T21:11:59.273Z",
+  "summary": {
+    "banks": 3,
+    "users": 25,
+    "wallets": 0,
+    "transactions": 0,
+    "roles": 12,
+    "approvalRules": 12
+  },
+  "banks": [
+    {
+      "id": 38,
+      "bank_name": "Banco Regional LATAM",
+      "bank_code": "TB1754341919249",
+      "country": "MX",
+      "contact_email": "admin@bancoregionallatam.com",
+      "tier": "tier2",
+      "status": "active",
+      "created_at": "2025-08-04T21:11:59.249Z"
+    },
+    {
+      "id": 39,
+      "bank_name": "Central Banking Corp",
+      "bank_code": "TB1754341919250",
+      "country": "GT",
+      "contact_email": "admin@centralbankingcorp.com",
+      "tier": "tier3",
+      "status": "active",
+      "created_at": "2025-08-04T21:11:59.250Z"
+    },
+    {
+      "id": 40,
+      "bank_name": "Pacific Financial",
+      "bank_code": "TB1754341919251",
+      "country": "BZ",
+      "contact_email": "admin@pacificfinancial.com",
+      "tier": "tier1",
+      "status": "active",
+      "created_at": "2025-08-04T21:11:59.251Z"
+    }
+  ],
+  "users": [
+    {
+      "id": 45,
+      "user_id": "user_7k9e0n9ku5p",
+      "bank_id": 38,
+      "email": "marvin.williams@bancoregionallatam.com",
+      "first_name": "Marvin",
+      "last_name": "Williams",
+      "role": "operator",
+      "department": "treasury"
+    },
+    {
+      "id": 46,
+      "user_id": "user_484res9hbfn",
+      "bank_id": 38,
+      "email": "antonio.rodríguez@bancoregionallatam.com",
+      "first_name": "Antonio",
+      "last_name": "Rodríguez",
+      "role": "viewer",
+      "department": "finance"
+    },
+    {
+      "id": 47,
+      "user_id": "user_dva42j7yuyp",
+      "bank_id": 38,
+      "email": "jorge.brown@bancoregionallatam.com",
+      "first_name": "Jorge",
+      "last_name": "Brown",
+      "role": "admin",
+      "department": "compliance"
+    },
+    {
+      "id": 48,
+      "user_id": "user_sy5nw0qdlr8",
+      "bank_id": 38,
+      "email": "maria.ramírez@bancoregionallatam.com",
+      "first_name": "Maria",
+      "last_name": "Ramírez",
+      "role": "admin",
+      "department": "risk"
+    },
+    {
+      "id": 49,
+      "user_id": "user_pchftqbxd6",
+      "bank_id": 38,
+      "email": "luis.paulino@bancoregionallatam.com",
+      "first_name": "Luis",
+      "last_name": "Paulino",
+      "role": "manager",
+      "department": "compliance"
+    },
+    {
+      "id": 50,
+      "user_id": "user_uubcb0s86rj",
+      "bank_id": 38,
+      "email": "carlos.vargas@bancoregionallatam.com",
+      "first_name": "Carlos",
+      "last_name": "Vargas",
+      "role": "manager",
+      "department": "audit"
+    },
+    {
+      "id": 51,
+      "user_id": "user_wfxcaqwnhe",
+      "bank_id": 38,
+      "email": "carlos.escalante@bancoregionallatam.com",
+      "first_name": "Carlos",
+      "last_name": "Escalante",
+      "role": "viewer",
+      "department": "operations"
+    },
+    {
+      "id": 52,
+      "user_id": "user_5k8n47x82j",
+      "bank_id": 38,
+      "email": "yolanda.mejía@bancoregionallatam.com",
+      "first_name": "Yolanda",
+      "last_name": "Mejía",
+      "role": "admin",
+      "department": "compliance"
+    },
+    {
+      "id": 53,
+      "user_id": "user_1lde0qbyzst",
+      "bank_id": 39,
+      "email": "maría.williams@centralbankingcorp.com",
+      "first_name": "María",
+      "last_name": "Williams",
+      "role": "viewer",
+      "department": "operations"
+    },
+    {
+      "id": 54,
+      "user_id": "user_ixaczo1ak8",
+      "bank_id": 39,
+      "email": "diego.lópez@centralbankingcorp.com",
+      "first_name": "Diego",
+      "last_name": "López",
+      "role": "manager",
+      "department": "compliance"
+    },
+    {
+      "id": 55,
+      "user_id": "user_80fdjkn4guq",
+      "bank_id": 39,
+      "email": "christopher.anderson@centralbankingcorp.com",
+      "first_name": "Christopher",
+      "last_name": "Anderson",
+      "role": "operator",
+      "department": "audit"
+    },
+    {
+      "id": 56,
+      "user_id": "user_1hum20co38m",
+      "bank_id": 39,
+      "email": "michelle.rivas@centralbankingcorp.com",
+      "first_name": "Michelle",
+      "last_name": "Rivas",
+      "role": "manager",
+      "department": "finance"
+    },
+    {
+      "id": 57,
+      "user_id": "user_87kd1jtxk44",
+      "bank_id": 39,
+      "email": "antonio.escalante@centralbankingcorp.com",
+      "first_name": "Antonio",
+      "last_name": "Escalante",
+      "role": "viewer",
+      "department": "risk"
+    },
+    {
+      "id": 58,
+      "user_id": "user_t5y1qgxigfd",
+      "bank_id": 40,
+      "email": "mónica.hernández@pacificfinancial.com",
+      "first_name": "Mónica",
+      "last_name": "Hernández",
+      "role": "operator",
+      "department": "compliance"
+    },
+    {
+      "id": 59,
+      "user_id": "user_k0xfhxpdldb",
+      "bank_id": 40,
+      "email": "raúl.reyes@pacificfinancial.com",
+      "first_name": "Raúl",
+      "last_name": "Reyes",
+      "role": "viewer",
+      "department": "finance"
+    },
+    {
+      "id": 60,
+      "user_id": "user_v7y0fcdgei",
+      "bank_id": 40,
+      "email": "mónica.reyes@pacificfinancial.com",
+      "first_name": "Mónica",
+      "last_name": "Reyes",
+      "role": "manager",
+      "department": "treasury"
+    },
+    {
+      "id": 61,
+      "user_id": "user_ycym12t4h1",
+      "bank_id": 40,
+      "email": "luis.jones@pacificfinancial.com",
+      "first_name": "Luis",
+      "last_name": "Jones",
+      "role": "manager",
+      "department": "compliance"
+    },
+    {
+      "id": 62,
+      "user_id": "user_3mtknysz5qu",
+      "bank_id": 40,
+      "email": "angela.sánchez@pacificfinancial.com",
+      "first_name": "Angela",
+      "last_name": "Sánchez",
+      "role": "operator",
+      "department": "risk"
+    },
+    {
+      "id": 63,
+      "user_id": "user_0vukc74ya1a",
+      "bank_id": 40,
+      "email": "claudia.zelaya@pacificfinancial.com",
+      "first_name": "Claudia",
+      "last_name": "Zelaya",
+      "role": "viewer",
+      "department": "compliance"
+    },
+    {
+      "id": 64,
+      "user_id": "user_v1ttii5l54k",
+      "bank_id": 40,
+      "email": "marvin.thomas@pacificfinancial.com",
+      "first_name": "Marvin",
+      "last_name": "Thomas",
+      "role": "viewer",
+      "department": "compliance"
+    },
+    {
+      "id": 65,
+      "user_id": "user_mcf4p3u042f",
+      "bank_id": 40,
+      "email": "jorge.sánchez@pacificfinancial.com",
+      "first_name": "Jorge",
+      "last_name": "Sánchez",
+      "role": "operator",
+      "department": "finance"
+    },
+    {
+      "id": 66,
+      "user_id": "user_h5lu7x0ouu",
+      "bank_id": 40,
+      "email": "víctor.martínez@pacificfinancial.com",
+      "first_name": "Víctor",
+      "last_name": "Martínez",
+      "role": "operator",
+      "department": "compliance"
+    },
+    {
+      "id": 67,
+      "user_id": "user_1sl6e7lwp7",
+      "bank_id": 40,
+      "email": "lucía.rosario@pacificfinancial.com",
+      "first_name": "Lucía",
+      "last_name": "Rosario",
+      "role": "operator",
+      "department": "treasury"
+    },
+    {
+      "id": 68,
+      "user_id": "user_cf8i68q7aos",
+      "bank_id": 40,
+      "email": "carmen.paulino@pacificfinancial.com",
+      "first_name": "Carmen",
+      "last_name": "Paulino",
+      "role": "operator",
+      "department": "compliance"
+    },
+    {
+      "id": 69,
+      "user_id": "user_nf0muo3cavg",
+      "bank_id": 40,
+      "email": "fernando.escalante@pacificfinancial.com",
+      "first_name": "Fernando",
+      "last_name": "Escalante",
+      "role": "manager",
+      "department": "risk"
+    }
+  ],
+  "wallets": [],
+  "transactions": [],
+  "roles": [
+    {
+      "id": 106,
+      "bank_id": 38,
+      "permissions": "read_only"
+    },
+    {
+      "id": 107,
+      "bank_id": 38,
+      "permissions": "transfers,reports"
+    },
+    {
+      "id": 108,
+      "bank_id": 38,
+      "permissions": "transfers,approvals,reports"
+    },
+    {
+      "id": 109,
+      "bank_id": 38,
+      "permissions": "all"
+    },
+    {
+      "id": 110,
+      "bank_id": 39,
+      "permissions": "read_only"
+    },
+    {
+      "id": 111,
+      "bank_id": 39,
+      "permissions": "transfers,reports"
+    },
+    {
+      "id": 112,
+      "bank_id": 39,
+      "permissions": "transfers,approvals,reports"
+    },
+    {
+      "id": 113,
+      "bank_id": 39,
+      "permissions": "all"
+    },
+    {
+      "id": 114,
+      "bank_id": 40,
+      "permissions": "read_only"
+    },
+    {
+      "id": 115,
+      "bank_id": 40,
+      "permissions": "transfers,reports"
+    },
+    {
+      "id": 116,
+      "bank_id": 40,
+      "permissions": "transfers,approvals,reports"
+    },
+    {
+      "id": 117,
+      "bank_id": 40,
+      "permissions": "all"
+    }
+  ],
+  "approvalRules": [
+    {
+      "id": 104,
+      "bank_id": 38,
+      "min_amount": 0,
+      "max_amount": 9999,
+      "required_role_level": 1,
+      "required_approvals": 0,
+      "auto_approve": true
+    },
+    {
+      "id": 105,
+      "bank_id": 38,
+      "min_amount": 10000,
+      "max_amount": 49999,
+      "required_role_level": 5,
+      "required_approvals": 1,
+      "auto_approve": false
+    },
+    {
+      "id": 106,
+      "bank_id": 38,
+      "min_amount": 50000,
+      "max_amount": 249999,
+      "required_role_level": 7,
+      "required_approvals": 1,
+      "auto_approve": false
+    },
+    {
+      "id": 107,
+      "bank_id": 38,
+      "min_amount": 250000,
+      "max_amount": null,
+      "required_role_level": 10,
+      "required_approvals": 2,
+      "auto_approve": false
+    },
+    {
+      "id": 108,
+      "bank_id": 39,
+      "min_amount": 0,
+      "max_amount": 9999,
+      "required_role_level": 1,
+      "required_approvals": 0,
+      "auto_approve": true
+    },
+    {
+      "id": 109,
+      "bank_id": 39,
+      "min_amount": 10000,
+      "max_amount": 49999,
+      "required_role_level": 5,
+      "required_approvals": 1,
+      "auto_approve": false
+    },
+    {
+      "id": 110,
+      "bank_id": 39,
+      "min_amount": 50000,
+      "max_amount": 249999,
+      "required_role_level": 7,
+      "required_approvals": 1,
+      "auto_approve": false
+    },
+    {
+      "id": 111,
+      "bank_id": 39,
+      "min_amount": 250000,
+      "max_amount": null,
+      "required_role_level": 10,
+      "required_approvals": 2,
+      "auto_approve": false
+    },
+    {
+      "id": 112,
+      "bank_id": 40,
+      "min_amount": 0,
+      "max_amount": 9999,
+      "required_role_level": 1,
+      "required_approvals": 0,
+      "auto_approve": true
+    },
+    {
+      "id": 113,
+      "bank_id": 40,
+      "min_amount": 10000,
+      "max_amount": 49999,
+      "required_role_level": 5,
+      "required_approvals": 1,
+      "auto_approve": false
+    },
+    {
+      "id": 114,
+      "bank_id": 40,
+      "min_amount": 50000,
+      "max_amount": 249999,
+      "required_role_level": 7,
+      "required_approvals": 1,
+      "auto_approve": false
+    },
+    {
+      "id": 115,
+      "bank_id": 40,
+      "min_amount": 250000,
+      "max_amount": null,
+      "required_role_level": 10,
+      "required_approvals": 2,
+      "auto_approve": false
+    }
+  ]
+}

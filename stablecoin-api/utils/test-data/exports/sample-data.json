@@ -1,0 +1,389 @@
+{
+  "generated_at": "2025-08-04T21:09:15.777Z",
+  "summary": {
+    "banks": 4,
+    "users": 33,
+    "wallets": 0,
+    "transactions": 0,
+    "roles": 0,
+    "approvalRules": 0
+  },
+  "banks": [
+    {
+      "id": 34,
+      "bank_name": "Central Banking Corp",
+      "bank_code": "TB002",
+      "country": "GT",
+      "contact_email": "admin@centralbankingcorp.com",
+      "tier": "tier2",
+      "status": "active",
+      "created_at": "2025-08-04T21:09:15.742Z"
+    },
+    {
+      "id": 35,
+      "bank_name": "Pacific Financial",
+      "bank_code": "TB003",
+      "country": "BZ",
+      "contact_email": "admin@pacificfinancial.com",
+      "tier": "tier2",
+      "status": "active",
+      "created_at": "2025-08-04T21:09:15.744Z"
+    },
+    {
+      "id": 36,
+      "bank_name": "Caribbean Trade Bank",
+      "bank_code": "TB004",
+      "country": "SV",
+      "contact_email": "admin@caribbeantradebank.com",
+      "tier": "tier1",
+      "status": "active",
+      "created_at": "2025-08-04T21:09:15.745Z"
+    },
+    {
+      "id": 37,
+      "bank_name": "Andean Commercial Bank",
+      "bank_code": "TB005",
+      "country": "HN",
+      "contact_email": "admin@andeancommercialbank.com",
+      "tier": "tier3",
+      "status": "active",
+      "created_at": "2025-08-04T21:09:15.746Z"
+    }
+  ],
+  "users": [
+    {
+      "id": 12,
+      "user_id": "user_5g211aa799u",
+      "bank_id": 34,
+      "email": "gabriela.gonzález@centralbankingcorp.com",
+      "first_name": "Gabriela",
+      "last_name": "González",
+      "role": "viewer",
+      "department": "treasury"
+    },
+    {
+      "id": 13,
+      "user_id": "user_enava5ppl1d",
+      "bank_id": 34,
+      "email": "jennifer.reyes@centralbankingcorp.com",
+      "first_name": "Jennifer",
+      "last_name": "Reyes",
+      "role": "viewer",
+      "department": "risk"
+    },
+    {
+      "id": 14,
+      "user_id": "user_5zpd6gwnp8f",
+      "bank_id": 34,
+      "email": "antonio.valladares@centralbankingcorp.com",
+      "first_name": "Antonio",
+      "last_name": "Valladares",
+      "role": "operator",
+      "department": "operations"
+    },
+    {
+      "id": 15,
+      "user_id": "user_khh0qzu2vt",
+      "bank_id": 34,
+      "email": "patricia.aguilar@centralbankingcorp.com",
+      "first_name": "Patricia",
+      "last_name": "Aguilar",
+      "role": "operator",
+      "department": "finance"
+    },
+    {
+      "id": 16,
+      "user_id": "user_b395ld61dkb",
+      "bank_id": 34,
+      "email": "miguel.báez@centralbankingcorp.com",
+      "first_name": "Miguel",
+      "last_name": "Báez",
+      "role": "viewer",
+      "department": "audit"
+    },
+    {
+      "id": 17,
+      "user_id": "user_r3g7o28fvwi",
+      "bank_id": 34,
+      "email": "lucía.flores@centralbankingcorp.com",
+      "first_name": "Lucía",
+      "last_name": "Flores",
+      "role": "manager",
+      "department": "audit"
+    },
+    {
+      "id": 18,
+      "user_id": "user_jzhray46oxi",
+      "bank_id": 34,
+      "email": "jennifer.rosario@centralbankingcorp.com",
+      "first_name": "Jennifer",
+      "last_name": "Rosario",
+      "role": "operator",
+      "department": "compliance"
+    },
+    {
+      "id": 19,
+      "user_id": "user_mxn4g7ucn5",
+      "bank_id": 34,
+      "email": "ana.delossantos@centralbankingcorp.com",
+      "first_name": "Ana",
+      "last_name": "De los Santos",
+      "role": "operator",
+      "department": "finance"
+    },
+    {
+      "id": 20,
+      "user_id": "user_qa99w1ugc1",
+      "bank_id": 35,
+      "email": "natalia.reyes@pacificfinancial.com",
+      "first_name": "Natalia",
+      "last_name": "Reyes",
+      "role": "manager",
+      "department": "compliance"
+    },
+    {
+      "id": 21,
+      "user_id": "user_ucoyzd7r279",
+      "bank_id": 35,
+      "email": "yolanda.martínez@pacificfinancial.com",
+      "first_name": "Yolanda",
+      "last_name": "Martínez",
+      "role": "viewer",
+      "department": "finance"
+    },
+    {
+      "id": 22,
+      "user_id": "user_2cxvnqd110b",
+      "bank_id": 35,
+      "email": "pedro.rivas@pacificfinancial.com",
+      "first_name": "Pedro",
+      "last_name": "Rivas",
+      "role": "viewer",
+      "department": "audit"
+    },
+    {
+      "id": 23,
+      "user_id": "user_rio9asesxpg",
+      "bank_id": 35,
+      "email": "félix.garcía@pacificfinancial.com",
+      "first_name": "Félix",
+      "last_name": "García",
+      "role": "manager",
+      "department": "treasury"
+    },
+    {
+      "id": 24,
+      "user_id": "user_kj5b30sk12b",
+      "bank_id": 35,
+      "email": "marisol.torres@pacificfinancial.com",
+      "first_name": "Marisol",
+      "last_name": "Torres",
+      "role": "viewer",
+      "department": "finance"
+    },
+    {
+      "id": 25,
+      "user_id": "user_8wtc13yb8m",
+      "bank_id": 35,
+      "email": "marvin.jones@pacificfinancial.com",
+      "first_name": "Marvin",
+      "last_name": "Jones",
+      "role": "viewer",
+      "department": "risk"
+    },
+    {
+      "id": 26,
+      "user_id": "user_mziy4r5e61s",
+      "bank_id": 35,
+      "email": "claudia.moore@pacificfinancial.com",
+      "first_name": "Claudia",
+      "last_name": "Moore",
+      "role": "operator",
+      "department": "finance"
+    },
+    {
+      "id": 27,
+      "user_id": "user_80vhgclaif4",
+      "bank_id": 35,
+      "email": "francisco.thomas@pacificfinancial.com",
+      "first_name": "Francisco",
+      "last_name": "Thomas",
+      "role": "viewer",
+      "department": "finance"
+    },
+    {
+      "id": 28,
+      "user_id": "user_d0wnkiy806",
+      "bank_id": 36,
+      "email": "antonio.ruiz@caribbeantradebank.com",
+      "first_name": "Antonio",
+      "last_name": "Ruiz",
+      "role": "viewer",
+      "department": "compliance"
+    },
+    {
+      "id": 29,
+      "user_id": "user_gk641u6n9yc",
+      "bank_id": 36,
+      "email": "alejandro.valladares@caribbeantradebank.com",
+      "first_name": "Alejandro",
+      "last_name": "Valladares",
+      "role": "admin",
+      "department": "finance"
+    },
+    {
+      "id": 30,
+      "user_id": "user_zcjma1tgv2",
+      "bank_id": 36,
+      "email": "esperanza.martínez@caribbeantradebank.com",
+      "first_name": "Esperanza",
+      "last_name": "Martínez",
+      "role": "viewer",
+      "department": "audit"
+    },
+    {
+      "id": 31,
+      "user_id": "user_konrppiz8ld",
+      "bank_id": 36,
+      "email": "marisol.aguilar@caribbeantradebank.com",
+      "first_name": "Marisol",
+      "last_name": "Aguilar",
+      "role": "operator",
+      "department": "treasury"
+    },
+    {
+      "id": 32,
+      "user_id": "user_rzkixiemnm",
+      "bank_id": 36,
+      "email": "edwin.lópez@caribbeantradebank.com",
+      "first_name": "Edwin",
+      "last_name": "López",
+      "role": "operator",
+      "department": "compliance"
+    },
+    {
+      "id": 33,
+      "user_id": "user_7nxv86rz16m",
+      "bank_id": 36,
+      "email": "mónica.delossantos@caribbeantradebank.com",
+      "first_name": "Mónica",
+      "last_name": "De los Santos",
+      "role": "viewer",
+      "department": "compliance"
+    },
+    {
+      "id": 34,
+      "user_id": "user_oqluarcsi9o",
+      "bank_id": 36,
+      "email": "carmen.ortega@caribbeantradebank.com",
+      "first_name": "Carmen",
+      "last_name": "Ortega",
+      "role": "operator",
+      "department": "compliance"
+    },
+    {
+      "id": 35,
+      "user_id": "user_j42asb3wu9p",
+      "bank_id": 36,
+      "email": "santos.cruz@caribbeantradebank.com",
+      "first_name": "Santos",
+      "last_name": "Cruz",
+      "role": "operator",
+      "department": "operations"
+    },
+    {
+      "id": 36,
+      "user_id": "user_lmesyq90zta",
+      "bank_id": 36,
+      "email": "silvia.davis@caribbeantradebank.com",
+      "first_name": "Silvia",
+      "last_name": "Davis",
+      "role": "operator",
+      "department": "treasury"
+    },
+    {
+      "id": 37,
+      "user_id": "user_z5wp6xbz3ql",
+      "bank_id": 36,
+      "email": "francisca.sánchez@caribbeantradebank.com",
+      "first_name": "Francisca",
+      "last_name": "Sánchez",
+      "role": "operator",
+      "department": "operations"
+    },
+    {
+      "id": 38,
+      "user_id": "user_pa60s2p23c",
+      "bank_id": 36,
+      "email": "rosa.thomas@caribbeantradebank.com",
+      "first_name": "Rosa",
+      "last_name": "Thomas",
+      "role": "manager",
+      "department": "treasury"
+    },
+    {
+      "id": 39,
+      "user_id": "user_q3zdsck2fbn",
+      "bank_id": 36,
+      "email": "juan.hernández@caribbeantradebank.com",
+      "first_name": "Juan",
+      "last_name": "Hernández",
+      "role": "manager",
+      "department": "risk"
+    },
+    {
+      "id": 40,
+      "user_id": "user_q6nuurj9r3f",
+      "bank_id": 37,
+      "email": "mark.ruiz@andeancommercialbank.com",
+      "first_name": "Mark",
+      "last_name": "Ruiz",
+      "role": "viewer",
+      "department": "operations"
+    },
+    {
+      "id": 41,
+      "user_id": "user_t23y36ovncc",
+      "bank_id": 37,
+      "email": "carmen.castro@andeancommercialbank.com",
+      "first_name": "Carmen",
+      "last_name": "Castro",
+      "role": "operator",
+      "department": "risk"
+    },
+    {
+      "id": 42,
+      "user_id": "user_42oqp5anxx",
+      "bank_id": 37,
+      "email": "lisa.anderson@andeancommercialbank.com",
+      "first_name": "Lisa",
+      "last_name": "Anderson",
+      "role": "admin",
+      "department": "risk"
+    },
+    {
+      "id": 43,
+      "user_id": "user_1ysjus2kb5p",
+      "bank_id": 37,
+      "email": "valeria.zelaya@andeancommercialbank.com",
+      "first_name": "Valeria",
+      "last_name": "Zelaya",
+      "role": "viewer",
+      "department": "compliance"
+    },
+    {
+      "id": 44,
+      "user_id": "user_4pl1ivlcjeq",
+      "bank_id": 37,
+      "email": "elena.zelaya@andeancommercialbank.com",
+      "first_name": "Elena",
+      "last_name": "Zelaya",
+      "role": "operator",
+      "department": "risk"
+    }
+  ],
+  "wallets": [],
+  "transactions": [],
+  "roles": [],
+  "approvalRules": []
+}

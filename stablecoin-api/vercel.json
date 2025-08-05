@@ -1,0 +1,10 @@
+{
+  "buildCommand": "cd financial-dashboard && npm run build",
+  "outputDirectory": "financial-dashboard/build",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+} 
