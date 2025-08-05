@@ -1,8 +1,8 @@
 import os
 
 AI_PROVIDER = "claude"  # or "openai"
-OPENAI_API_KEY = "sk-..."  # your OpenAI key
-CLAUDE_API_KEY = "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"
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")  # your OpenAI key
+CLAUDE_API_KEY = os.getenv("CLAUDE_API_KEY", "")  # your Claude key
 
 # Optionally, add more config as needed
 
